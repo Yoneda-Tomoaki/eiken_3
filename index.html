@@ -13,7 +13,7 @@
     <div class="text-center mb-6">
       <span class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">英検3級対策</span>
       <h1 class="text-3xl font-bold text-blue-900">英単語クイズ</h1>
-      <p class="text-blue-400 text-sm mt-1">全150問 ／ 10問 × 15セクション</p>
+      <p class="text-blue-400 text-sm mt-1">全250問 ／ 10問 × 25セクション</p>
     </div>
     <div id="sectionList" class="space-y-4"></div>
     <p class="text-center text-xs text-gray-300 mt-8">英検3級 英単語クイズアプリ</p>
@@ -120,7 +120,7 @@
   </div>
 
 <script>
-// ==================== WORD DATA (150語) ====================
+// ==================== WORD DATA (250語) ====================
 // fill フィールド: 熟語など活用形が変わる場合にフレーズへ埋める文字列を指定
 // fill がない場合は word をそのまま使用
 const words = [
@@ -289,6 +289,116 @@ const words = [
   {id:148, word:"do one's best",   meaning:"最善を尽くす",      fill:"do my best",      phrase:"I will (____) in today's game.",         phraseJa:"私は今日の試合で最善を尽くすつもりです。"},
   {id:149, word:"these days",      meaning:"最近・このごろ",    fill:"these days",      phrase:"(____), many students study online.",    phraseJa:"最近、多くの生徒がオンラインで勉強しています。"},
   {id:150, word:"each other",      meaning:"お互いに",          fill:"each other",      phrase:"We helped (____) with our homework.",    phraseJa:"私たちは宿題をお互いに助け合いました。"},
+  // ===== Section 16: 動詞（基本・頻出） =====
+  {id:151, word:"achieve",   meaning:"達成する",         phrase:"I want to (____) my dream of becoming a doctor.",      phraseJa:"私は医者になるという夢を達成したいです。"},
+  {id:152, word:"avoid",     meaning:"避ける",           phrase:"We should (____) eating too much sugar.",               phraseJa:"私たちは砂糖の食べすぎを避けるべきです。"},
+  {id:153, word:"break",     meaning:"壊す・破る",        phrase:"Don't (____) the rules of the game.",                  phraseJa:"ゲームのルールを破らないでください。"},
+  {id:154, word:"bring",     meaning:"持ってくる",        phrase:"Please (____) your dictionary to class tomorrow.",     phraseJa:"明日、授業に辞書を持ってきてください。"},
+  {id:155, word:"build",     meaning:"建てる・作る",      phrase:"They plan to (____) a new school in this town.",       phraseJa:"彼らはこの町に新しい学校を建てる計画があります。"},
+  {id:156, word:"catch",     meaning:"つかまえる・間に合う", phrase:"I need to run to (____) the last train.",            phraseJa:"最終電車に間に合うように走らなければなりません。"},
+  {id:157, word:"check",     meaning:"確認する",          phrase:"Let me (____) my schedule before making plans.",       phraseJa:"計画を立てる前にスケジュールを確認させてください。"},
+  {id:158, word:"choose",    meaning:"選ぶ",              phrase:"It was hard to (____) between the two dishes.",        phraseJa:"2つの料理から選ぶのは難しかったです。"},
+  {id:159, word:"fall",      meaning:"落ちる・転ぶ",      phrase:"Be careful not to (____) on the icy road.",            phraseJa:"凍った道で転ばないように気をつけてください。"},
+  {id:160, word:"find",      meaning:"見つける",          phrase:"Did you (____) your missing key?",                     phraseJa:"なくした鍵は見つかりましたか？"},
+  // ===== Section 17: 動詞（活動・移動） =====
+  {id:161, word:"fly",       meaning:"飛ぶ",              phrase:"I have always wanted to (____) in a hot air balloon.", phraseJa:"私はいつか熱気球で飛んでみたいと思っていました。"},
+  {id:162, word:"grow",      meaning:"育てる・成長する",   phrase:"My grandfather likes to (____) vegetables in his garden.", phraseJa:"私の祖父は庭で野菜を育てるのが好きです。"},
+  {id:163, word:"hold",      meaning:"開催する・持つ",     phrase:"Our school will (____) a music festival next month.",  phraseJa:"私たちの学校は来月音楽祭を開催する予定です。"},
+  {id:164, word:"keep",      meaning:"保つ・続ける",       phrase:"You should (____) your room clean and tidy.",          phraseJa:"部屋をきれいに整えておくべきです。"},
+  {id:165, word:"leave",     meaning:"出発する・去る",     phrase:"The train will (____) the station at 8 a.m.",          phraseJa:"電車は午前8時に駅を出発します。"},
+  {id:166, word:"lose",      meaning:"負ける・失う",       phrase:"We didn't want to (____) the match after practicing so hard.", phraseJa:"あんなに一生懸命練習したので、試合に負けたくありませんでした。"},
+  {id:167, word:"pass",      meaning:"合格する・通り過ぎる", phrase:"She studied hard and was able to (____) the exam.",  phraseJa:"彼女は一生懸命勉強して試験に合格することができました。"},
+  {id:168, word:"ride",      meaning:"乗る",              phrase:"I learned to (____) a bicycle when I was five.",       phraseJa:"私は5歳のときに自転車の乗り方を覚えました。"},
+  {id:169, word:"save",      meaning:"節約する・救う",     phrase:"We should try to (____) electricity to protect the environment.", phraseJa:"環境を守るために電気を節約するように心がけましょう。"},
+  {id:170, word:"send",      meaning:"送る",              phrase:"I will (____) you a message when I arrive.",           phraseJa:"着いたらメッセージを送ります。"},
+  // ===== Section 18: 動詞（達成・変化） =====
+  {id:171, word:"show",      meaning:"見せる・示す",       phrase:"Can you (____) me how to use this machine?",          phraseJa:"この機械の使い方を教えてもらえますか？"},
+  {id:172, word:"speak",     meaning:"話す",              phrase:"I want to (____) English fluently someday.",           phraseJa:"私はいつか流暢に英語を話せるようになりたいです。"},
+  {id:173, word:"start",     meaning:"始める",            phrase:"Let's (____) the meeting with a brief introduction.",  phraseJa:"簡単な自己紹介でミーティングを始めましょう。"},
+  {id:174, word:"stop",      meaning:"止まる・やめる",     phrase:"Please (____) talking during the test.",               phraseJa:"テスト中に話すのをやめてください。"},
+  {id:175, word:"throw",     meaning:"投げる",            phrase:"He can (____) the ball very fast.",                    phraseJa:"彼はとても速くボールを投げることができます。"},
+  {id:176, word:"win",       meaning:"勝つ",              phrase:"Our team hopes to (____) the championship this year.", phraseJa:"私たちのチームは今年選手権で優勝したいと思っています。"},
+  {id:177, word:"wish",      meaning:"願う",              phrase:"I (____) I could travel around the world.",            phraseJa:"世界中を旅できたらいいのにと思います。"},
+  {id:178, word:"plan",      meaning:"計画する",          phrase:"We (____) to visit the museum on Sunday.",             phraseJa:"私たちは日曜日に博物館を訪れる予定です。"},
+  {id:179, word:"protect",   meaning:"守る",              phrase:"We need to (____) wild animals from disappearing.",    phraseJa:"野生動物が絶滅しないように守る必要があります。"},
+  {id:180, word:"gather",    meaning:"集める・集まる",     phrase:"Students (____) in the gym for the school assembly.",  phraseJa:"生徒たちは学校集会のために体育館に集まります。"},
+  // ===== Section 19: 名詞（場所・自然） =====
+  {id:181, word:"beach",     meaning:"海岸・ビーチ",       phrase:"We spent the day relaxing on the (____) by the sea.", phraseJa:"私たちは海辺のビーチでのんびりした一日を過ごしました。"},
+  {id:182, word:"building",  meaning:"建物",              phrase:"That tall (____) in the center of town is a hotel.",   phraseJa:"町の中心にある高い建物はホテルです。"},
+  {id:183, word:"country",   meaning:"国",                phrase:"Japan is a (____) known for its beautiful nature.",    phraseJa:"日本は美しい自然で知られた国です。"},
+  {id:184, word:"earth",     meaning:"地球",              phrase:"We should take care of the (____) for future generations.", phraseJa:"将来の世代のために地球を大切にしなければなりません。"},
+  {id:185, word:"flower",    meaning:"花",                phrase:"My mother received a beautiful (____) for her birthday.", phraseJa:"母は誕生日に美しい花をもらいました。"},
+  {id:186, word:"garden",    meaning:"庭",                phrase:"My grandmother grows many flowers in her (____).",     phraseJa:"私の祖母は庭でたくさんの花を育てています。"},
+  {id:187, word:"lake",      meaning:"湖",                phrase:"We went fishing at the (____) near our campsite.",     phraseJa:"私たちはキャンプ場近くの湖に釣りに行きました。"},
+  {id:188, word:"mountain",  meaning:"山",                phrase:"Climbing a (____) is a great way to enjoy nature.",    phraseJa:"山に登ることは自然を楽しむ素晴らしい方法です。"},
+  {id:189, word:"river",     meaning:"川",                phrase:"Children often play near the (____) in summer.",       phraseJa:"子どもたちは夏によく川の近くで遊びます。"},
+  {id:190, word:"sky",       meaning:"空",                phrase:"The (____) was clear and blue on the day of the trip.", phraseJa:"旅行の日は空が澄んで青かったです。"},
+  // ===== Section 20: 名詞（生活・日常） =====
+  {id:191, word:"concert",   meaning:"コンサート",         phrase:"I'm going to a piano (____) with my family this weekend.", phraseJa:"今週末、家族と一緒にピアノコンサートに行きます。"},
+  {id:192, word:"danger",    meaning:"危険",              phrase:"Swimming alone in the sea can be a (____) to your life.", phraseJa:"一人で海で泳ぐことは命の危険になることがあります。"},
+  {id:193, word:"dream",     meaning:"夢",                phrase:"It is important to work hard to achieve your (____).", phraseJa:"夢を達成するために一生懸命努力することが大切です。"},
+  {id:194, word:"event",     meaning:"イベント・行事",     phrase:"The sports (____) at our school is held every October.", phraseJa:"私たちの学校の体育祭は毎年10月に行われます。"},
+  {id:195, word:"exam",      meaning:"試験",              phrase:"I stayed up late studying for my English (____).",     phraseJa:"英語の試験のために夜遅くまで勉強しました。"},
+  {id:196, word:"food",      meaning:"食べ物",            phrase:"Japanese (____) is popular all around the world.",     phraseJa:"日本食は世界中で人気があります。"},
+  {id:197, word:"gift",      meaning:"贈り物",            phrase:"She gave me a beautiful (____) for my graduation.",    phraseJa:"彼女は私の卒業のために素敵な贈り物をくれました。"},
+  {id:198, word:"hobby",     meaning:"趣味",              phrase:"Reading books is my favorite (____).",                 phraseJa:"読書は私の一番好きな趣味です。"},
+  {id:199, word:"job",       meaning:"仕事・職業",         phrase:"My mother has a (____) at a local hospital.",          phraseJa:"私の母は地元の病院で仕事をしています。"},
+  {id:200, word:"movie",     meaning:"映画",              phrase:"Let's watch a (____) together at home tonight.",       phraseJa:"今夜は家で一緒に映画を見ましょう。"},
+  // ===== Section 21: 名詞（目標・活動） =====
+  {id:201, word:"goal",      meaning:"目標・ゴール",       phrase:"My (____) is to become a professional soccer player.", phraseJa:"私の目標はプロサッカー選手になることです。"},
+  {id:202, word:"habit",     meaning:"習慣",              phrase:"Eating breakfast every day is a good (____) to have.", phraseJa:"毎日朝食を食べることは良い習慣です。"},
+  {id:203, word:"health",    meaning:"健康",              phrase:"Exercise is important for our (____) and well-being.", phraseJa:"運動は私たちの健康と幸福にとって大切です。"},
+  {id:204, word:"hometown",  meaning:"故郷・地元",         phrase:"I feel happy whenever I go back to my (____).",        phraseJa:"故郷に帰るたびにうれしい気持ちになります。"},
+  {id:205, word:"idea",      meaning:"アイデア・考え",     phrase:"Do you have any (____) for the school festival?",     phraseJa:"学校祭についてアイデアはありますか？"},
+  {id:206, word:"news",      meaning:"ニュース・知らせ",   phrase:"I heard great (____) about your brother's new job.",   phraseJa:"お兄さんの新しい仕事について素晴らしい知らせを聞きました。"},
+  {id:207, word:"party",     meaning:"パーティー",         phrase:"We are planning a surprise (____) for our teacher.",   phraseJa:"私たちは先生のためにサプライズパーティーを計画しています。"},
+  {id:208, word:"pet",       meaning:"ペット",             phrase:"I want to get a (____) dog when I grow up.",           phraseJa:"大きくなったらペットの犬を飼いたいです。"},
+  {id:209, word:"reason",    meaning:"理由",              phrase:"The main (____) I study English is to travel abroad.", phraseJa:"私が英語を勉強する主な理由は海外旅行のためです。"},
+  {id:210, word:"song",      meaning:"歌",                phrase:"This is my favorite (____) by my favorite singer.",    phraseJa:"これは私の好きな歌手のお気に入りの歌です。"},
+  // ===== Section 22: 形容詞（感情・性格） =====
+  {id:211, word:"active",    meaning:"活発な・積極的な",   phrase:"She is very (____) and always participates in club activities.", phraseJa:"彼女はとても活発で、いつも部活動に積極的に参加しています。"},
+  {id:212, word:"angry",     meaning:"怒っている",         phrase:"My father was (____) because I came home late.",       phraseJa:"私が遅く帰宅したので父は怒っていました。"},
+  {id:213, word:"brave",     meaning:"勇敢な",            phrase:"It was very (____) of you to speak in front of the audience.", phraseJa:"観客の前で話すのはとても勇敢でした。"},
+  {id:214, word:"friendly",  meaning:"親切な・愛想の良い", phrase:"Everyone at my new school is very (____) and kind.",   phraseJa:"新しい学校のみんながとても親切でやさしいです。"},
+  {id:215, word:"glad",      meaning:"うれしい",           phrase:"I am (____) that you could come to my birthday party.", phraseJa:"誕生日パーティーに来てくれてうれしいです。"},
+  {id:216, word:"helpful",   meaning:"役に立つ",           phrase:"Thank you for your (____) advice about the project.",  phraseJa:"プロジェクトについての役立つアドバイスをありがとうございます。"},
+  {id:217, word:"honest",    meaning:"正直な",            phrase:"It is important to be (____) with your friends.",      phraseJa:"友達に対して正直であることが大切です。"},
+  {id:218, word:"kind",      meaning:"親切な",            phrase:"He is always (____) to his classmates.",               phraseJa:"彼はいつもクラスメートに親切です。"},
+  {id:219, word:"proud",     meaning:"誇りに思う",         phrase:"Her parents are (____) of her hard work and success.", phraseJa:"彼女の両親は彼女の努力と成功を誇りに思っています。"},
+  {id:220, word:"sad",       meaning:"悲しい",            phrase:"I felt (____) when I heard that my friend was moving away.", phraseJa:"友達が引っ越すと聞いて悲しかったです。"},
+  // ===== Section 23: 形容詞（状態・評価） =====
+  {id:221, word:"beautiful", meaning:"美しい",            phrase:"The (____) scenery made everyone stop and stare.",     phraseJa:"美しい景色に誰もが立ち止まって見とれました。"},
+  {id:222, word:"bright",    meaning:"明るい・賢い",       phrase:"She is a very (____) student who always asks good questions.", phraseJa:"彼女はいつも良い質問をするとても賢い生徒です。"},
+  {id:223, word:"busy",      meaning:"忙しい",            phrase:"I have been very (____) with school projects this week.", phraseJa:"今週は学校のプロジェクトでとても忙しくしています。"},
+  {id:224, word:"clean",     meaning:"きれいな・清潔な",   phrase:"We should keep our classroom (____) every day.",       phraseJa:"私たちは毎日教室をきれいにしておくべきです。"},
+  {id:225, word:"correct",   meaning:"正しい",            phrase:"Please write the (____) answer in the blank.",         phraseJa:"空欄に正しい答えを書いてください。"},
+  {id:226, word:"dangerous", meaning:"危険な",            phrase:"It is (____) to cross the street without looking both ways.", phraseJa:"両方向を確認せずに道路を渡るのは危険です。"},
+  {id:227, word:"difficult", meaning:"難しい",            phrase:"Math can be (____) for some students at first.",       phraseJa:"数学は最初は難しいと感じる生徒もいます。"},
+  {id:228, word:"easy",      meaning:"簡単な",            phrase:"This question is not as (____) as it looks.",          phraseJa:"この問題は見た目ほど簡単ではありません。"},
+  {id:229, word:"excellent", meaning:"優秀な・素晴らしい", phrase:"She gave an (____) speech at the graduation ceremony.", phraseJa:"彼女は卒業式で素晴らしいスピーチをしました。"},
+  {id:230, word:"fresh",     meaning:"新鮮な",            phrase:"I love eating (____) fruits from the local market.",   phraseJa:"地元の市場の新鮮な果物を食べるのが大好きです。"},
+  // ===== Section 24: 形容詞（様子・程度） =====
+  {id:231, word:"interesting", meaning:"興味深い・おもしろい", phrase:"This is one of the most (____) books I have ever read.", phraseJa:"これは今まで読んだ中で最もおもしろい本の一つです。"},
+  {id:232, word:"peaceful",  meaning:"平和な・穏やかな",   phrase:"The small village looked (____) and quiet in the early morning.", phraseJa:"小さな村は早朝に穏やかで静かに見えました。"},
+  {id:233, word:"serious",   meaning:"真剣な・深刻な",     phrase:"Pollution is a (____) problem that we must solve together.", phraseJa:"汚染は私たちが一緒に解決しなければならない深刻な問題です。"},
+  {id:234, word:"wonderful", meaning:"すばらしい",         phrase:"We had a (____) time at the summer festival.",         phraseJa:"夏祭りで素晴らしい時間を過ごしました。"},
+  {id:235, word:"curious",   meaning:"好奇心旺盛な",       phrase:"She is always (____) about new things around her.",    phraseJa:"彼女はいつも身の回りの新しいことに好奇心旺盛です。"},
+  {id:236, word:"polite",    meaning:"礼儀正しい",         phrase:"It is important to be (____) when speaking to adults.", phraseJa:"大人に話すときは礼儀正しくすることが大切です。"},
+  {id:237, word:"perfect",   meaning:"完璧な",            phrase:"The weather was (____) for an outdoor event.",         phraseJa:"野外イベントには完璧な天気でした。"},
+  {id:238, word:"safe",      meaning:"安全な",            phrase:"Please make sure the road is (____) before crossing.", phraseJa:"道路を渡る前に安全か確認してください。"},
+  {id:239, word:"strange",   meaning:"変な・不思議な",     phrase:"There was a (____) noise coming from outside at night.", phraseJa:"夜、外から変な音がしていました。"},
+  {id:240, word:"sudden",    meaning:"突然の",            phrase:"The (____) rain surprised everyone at the sports festival.", phraseJa:"突然の雨が体育祭のみんなを驚かせました。"},
+  // ===== Section 25: 副詞 =====
+  {id:241, word:"carefully", meaning:"注意深く",           phrase:"Please read the instructions (____) before starting.", phraseJa:"始める前に注意深く説明書を読んでください。"},
+  {id:242, word:"clearly",   meaning:"はっきりと",         phrase:"Please speak (____) so everyone can hear you.",        phraseJa:"みんなが聞こえるようにはっきりと話してください。"},
+  {id:243, word:"easily",    meaning:"簡単に",            phrase:"You can (____) find the library on this map.",         phraseJa:"この地図で図書館を簡単に見つけられます。"},
+  {id:244, word:"finally",   meaning:"ついに・最後に",      phrase:"After much practice, she (____) won the piano competition.", phraseJa:"たくさんの練習の後、彼女はついにピアノコンクールで優勝しました。"},
+  {id:245, word:"hard",      meaning:"一生懸命に",         phrase:"I studied (____) every day to prepare for the exam.",  phraseJa:"私は試験の準備のために毎日一生懸命勉強しました。"},
+  {id:246, word:"maybe",     meaning:"たぶん・もしかすると", phrase:"(____) we can go to the park if the weather is good.", phraseJa:"天気が良ければ公園に行けるかもしれません。"},
+  {id:247, word:"often",     meaning:"よく・しばしば",      phrase:"I (____) help my mother cook dinner after school.",    phraseJa:"私はよく放課後に母の夕食作りを手伝います。"},
+  {id:248, word:"quickly",   meaning:"すばやく・急いで",    phrase:"She answered the question (____) without any hesitation.", phraseJa:"彼女はためらいなくすばやく質問に答えました。"},
+  {id:249, word:"slowly",    meaning:"ゆっくりと",          phrase:"The old man walked (____) along the path in the park.", phraseJa:"老人は公園の道をゆっくりと歩いていました。"},
+  {id:250, word:"usually",   meaning:"ふつう・たいてい",    phrase:"I (____) wake up at seven o'clock every morning.",    phraseJa:"私はたいてい毎朝7時に起きます。"},
 ];
 
 // ==================== CONSTANTS ====================
@@ -344,7 +454,9 @@ function renderHome() {
     "基本動詞1","基本名詞・形容詞","環境・社会系","表現・コミュニケーション",
     "形容詞・副詞","動詞（頻出1）","動詞（頻出2）","動詞（頻出3）",
     "名詞（頻出1）","名詞（頻出2）","形容詞（頻出）","副詞・接続詞",
-    "熟語1（動詞句）","熟語2（副詞句）","熟語3（重要イディオム）"
+    "熟語1（動詞句）","熟語2（副詞句）","熟語3（重要イディオム）",
+    "動詞（基本・頻出）","動詞（活動・移動）","動詞（達成・変化）","名詞（場所・自然）","名詞（生活・日常）",
+    "名詞（目標・活動）","形容詞（感情・性格）","形容詞（状態・評価）","形容詞（様子・程度）","副詞"
   ];
 
   sections.forEach((sectionWords, idx) => {
